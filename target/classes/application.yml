@@ -1,0 +1,21 @@
+server:
+  port: 2021
+
+# OracleDB connection settings
+# Drops existing tables, recreates them and executes import.sql
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  # Settings for the oracle connection
+  datasource:
+    url:
+      jdbc:oracle:thin:@localhost:1521:xe
+    username:
+      system
+    password:
+      12345
+    driver-class-oracle:
+      jdbc:
+        driver:
+          OracleDriver
