@@ -2,7 +2,6 @@ server:
   port: 2021
 
 # OracleDB connection settings
-# Drops existing tables, recreates them and executes import.sql
 spring:
   jpa:
     hibernate:
@@ -19,3 +18,14 @@ spring:
       jdbc:
         driver:
           OracleDriver
+  application:
+    name: ORDER-SERVICE
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost

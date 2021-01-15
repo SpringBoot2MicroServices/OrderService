@@ -1,5 +1,7 @@
 package com.ar.javatech.os.api.controller;
 
+import com.ar.javatech.os.api.dto.TransactionRequest;
+import com.ar.javatech.os.api.dto.TransactionResponse;
 import com.ar.javatech.os.api.entity.Order;
 import com.ar.javatech.os.api.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +18,11 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/book-order")
-    public Order bookOrder(@RequestBody Order order){
-        return orderService.placeOrder(order);
+    public TransactionResponse bookOrder(@RequestBody TransactionRequest request){
+
+        orderService.placeOrder(request);
+
+        return orderService.placeOrder(request);
     }
 
 }
